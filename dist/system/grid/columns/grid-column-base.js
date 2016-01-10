@@ -15,7 +15,10 @@ System.register(['lodash'], function (_export) {
             this.registerWithGrid(this.grid);
           } else {
             this.bindToRow(bindingContext);
-            this.loadCssFrameworkSettings();
+
+            if (this.grid.cssFrameworkConfiguration) {
+              this.loadCssFrameworkSettings(this.grid.cssFrameworkConfiguration);
+            }
           }
         },
 

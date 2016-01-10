@@ -1,4 +1,4 @@
-define(['exports', 'aurelia-binding', 'aurelia-dependency-injection', 'aurelia-templating', '../grid', './grid-column-base'], function (exports, _aureliaBinding, _aureliaDependencyInjection, _aureliaTemplating, _grid, _gridColumnBase) {
+define(['exports', 'aurelia-binding', 'aurelia-dependency-injection', 'aurelia-templating', '../grid', './grid-column-base', './grid-column-button', './grid-column-checkbox', './grid-column-edit', './grid-column-text'], function (exports, _aureliaBinding, _aureliaDependencyInjection, _aureliaTemplating, _grid, _gridColumnBase, _gridColumnButton, _gridColumnCheckbox, _gridColumnEdit, _gridColumnText) {
   'use strict';
 
   Object.defineProperty(exports, '__esModule', {
@@ -15,12 +15,40 @@ define(['exports', 'aurelia-binding', 'aurelia-dependency-injection', 'aurelia-t
 
   var _gridColumnBase2 = _interopRequireDefault(_gridColumnBase);
 
+  var _gridColumnButton2 = _interopRequireDefault(_gridColumnButton);
+
+  var _gridColumnCheckbox2 = _interopRequireDefault(_gridColumnCheckbox);
+
+  var _gridColumnEdit2 = _interopRequireDefault(_gridColumnEdit);
+
+  var _gridColumnText2 = _interopRequireDefault(_gridColumnText);
+
   var GridColumn = (function () {
     var _instanceInitializers = {};
     var _instanceInitializers = {};
 
     _createDecoratedClass(GridColumn, [{
-      key: 'heading',
+      key: 'buttonClick',
+      decorators: [_aureliaTemplating.bindable],
+      initializer: null,
+      enumerable: true
+    }, {
+      key: 'caption',
+      decorators: [_aureliaTemplating.bindable],
+      initializer: null,
+      enumerable: true
+    }, {
+      key: 'checkedIconClass',
+      decorators: [_aureliaTemplating.bindable],
+      initializer: null,
+      enumerable: true
+    }, {
+      key: 'class',
+      decorators: [_aureliaTemplating.bindable],
+      initializer: null,
+      enumerable: true
+    }, {
+      key: 'containerClass',
       decorators: [_aureliaTemplating.bindable],
       initializer: null,
       enumerable: true
@@ -45,12 +73,79 @@ define(['exports', 'aurelia-binding', 'aurelia-dependency-injection', 'aurelia-t
       initializer: null,
       enumerable: true
     }, {
+      key: 'heading',
+      decorators: [_aureliaTemplating.bindable],
+      initializer: null,
+      enumerable: true
+    }, {
       key: 'property',
       decorators: [_aureliaTemplating.bindable],
       initializer: null,
       enumerable: true
     }, {
       key: 'sortable',
+      decorators: [_aureliaTemplating.bindable],
+      initializer: null,
+      enumerable: true
+    }, {
+      key: 'type',
+      decorators: [_aureliaTemplating.bindable],
+      initializer: function initializer() {
+        return 'text';
+      },
+      enumerable: true
+    }, {
+      key: 'uncheckedIconClass',
+      decorators: [_aureliaTemplating.bindable],
+      initializer: null,
+      enumerable: true
+    }, {
+      key: 'value',
+      decorators: [_aureliaTemplating.bindable],
+      initializer: null,
+      enumerable: true
+    }, {
+      key: 'butttonGroupClass',
+      decorators: [_aureliaTemplating.bindable],
+      initializer: null,
+      enumerable: true
+    }, {
+      key: 'cancelButtonClass',
+      decorators: [_aureliaTemplating.bindable],
+      initializer: null,
+      enumerable: true
+    }, {
+      key: 'cancelClick',
+      decorators: [_aureliaTemplating.bindable],
+      initializer: null,
+      enumerable: true
+    }, {
+      key: 'editButtonClass',
+      decorators: [_aureliaTemplating.bindable],
+      initializer: null,
+      enumerable: true
+    }, {
+      key: 'editClick',
+      decorators: [_aureliaTemplating.bindable],
+      initializer: null,
+      enumerable: true
+    }, {
+      key: 'orDivClass',
+      decorators: [_aureliaTemplating.bindable],
+      initializer: null,
+      enumerable: true
+    }, {
+      key: 'saveButtonClass',
+      decorators: [_aureliaTemplating.bindable],
+      initializer: null,
+      enumerable: true
+    }, {
+      key: 'saveCancelButtonGroupClass',
+      decorators: [_aureliaTemplating.bindable],
+      initializer: null,
+      enumerable: true
+    }, {
+      key: 'saveClick',
       decorators: [_aureliaTemplating.bindable],
       initializer: null,
       enumerable: true
@@ -69,7 +164,15 @@ define(['exports', 'aurelia-binding', 'aurelia-dependency-injection', 'aurelia-t
 
       this.alignment = 'left aligned';
 
-      _defineDecoratedPropertyDescriptor(this, 'heading', _instanceInitializers);
+      _defineDecoratedPropertyDescriptor(this, 'buttonClick', _instanceInitializers);
+
+      _defineDecoratedPropertyDescriptor(this, 'caption', _instanceInitializers);
+
+      _defineDecoratedPropertyDescriptor(this, 'checkedIconClass', _instanceInitializers);
+
+      _defineDecoratedPropertyDescriptor(this, 'class', _instanceInitializers);
+
+      _defineDecoratedPropertyDescriptor(this, 'containerClass', _instanceInitializers);
 
       _defineDecoratedPropertyDescriptor(this, 'editInputClass', _instanceInitializers);
 
@@ -79,9 +182,35 @@ define(['exports', 'aurelia-binding', 'aurelia-dependency-injection', 'aurelia-t
 
       _defineDecoratedPropertyDescriptor(this, 'filterable', _instanceInitializers);
 
+      _defineDecoratedPropertyDescriptor(this, 'heading', _instanceInitializers);
+
       _defineDecoratedPropertyDescriptor(this, 'property', _instanceInitializers);
 
       _defineDecoratedPropertyDescriptor(this, 'sortable', _instanceInitializers);
+
+      _defineDecoratedPropertyDescriptor(this, 'type', _instanceInitializers);
+
+      _defineDecoratedPropertyDescriptor(this, 'uncheckedIconClass', _instanceInitializers);
+
+      _defineDecoratedPropertyDescriptor(this, 'value', _instanceInitializers);
+
+      _defineDecoratedPropertyDescriptor(this, 'butttonGroupClass', _instanceInitializers);
+
+      _defineDecoratedPropertyDescriptor(this, 'cancelButtonClass', _instanceInitializers);
+
+      _defineDecoratedPropertyDescriptor(this, 'cancelClick', _instanceInitializers);
+
+      _defineDecoratedPropertyDescriptor(this, 'editButtonClass', _instanceInitializers);
+
+      _defineDecoratedPropertyDescriptor(this, 'editClick', _instanceInitializers);
+
+      _defineDecoratedPropertyDescriptor(this, 'orDivClass', _instanceInitializers);
+
+      _defineDecoratedPropertyDescriptor(this, 'saveButtonClass', _instanceInitializers);
+
+      _defineDecoratedPropertyDescriptor(this, 'saveCancelButtonGroupClass', _instanceInitializers);
+
+      _defineDecoratedPropertyDescriptor(this, 'saveClick', _instanceInitializers);
 
       this.grid = grid;
       this.observerLocator = observerLocator;
@@ -90,29 +219,33 @@ define(['exports', 'aurelia-binding', 'aurelia-dependency-injection', 'aurelia-t
     }
 
     _createDecoratedClass(GridColumn, [{
+      key: 'initialize',
+      value: function initialize() {}
+    }, {
       key: 'bind',
       value: function bind(bindingContext) {
-        var _this = this;
-
-        this.bindToContext(bindingContext);
-
-        if (bindingContext !== this.grid) {
-          this.observerLocator.getObserver(bindingContext.row, 'validation').subscribe(function (newValue) {
-            _this.validation = Object.assign({}, newValue, { property: _this.property });
-          });
+        switch (this.type.toLowerCase()) {
+          case 'button':
+            Object.assign(this, _gridColumnButton2['default']);
+            break;
+          case 'checkbox':
+            Object.assign(this, _gridColumnCheckbox2['default']);
+            break;
+          case 'edit-buttons':
+            Object.assign(this, _gridColumnEdit2['default']);
+            break;
+          default:
+            Object.assign(this, _gridColumnText2['default']);
+            break;
         }
+
+        this.initialize();
+        this.bindToContext(bindingContext);
+        this.additionalBinding(bindingContext);
       }
     }, {
-      key: 'loadCssFrameworkSettings',
-      value: function loadCssFrameworkSettings() {
-        if (this.grid.cssFrameworkConfiguration) {
-          var settings = this.grid.cssFrameworkConfiguration.textClasses;
-
-          this.editInputClass = settings.editInput;
-          this.editFieldClass = settings.editField;
-          this.editFormClass = settings.editForm;
-        }
-      }
+      key: 'additionalBinding',
+      value: function additionalBinding(bindingContext) {}
     }], null, _instanceInitializers);
 
     var _GridColumn = GridColumn;

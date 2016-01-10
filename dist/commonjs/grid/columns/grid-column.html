@@ -1,10 +1,6 @@
 <template>
-    <td if.bind="!isEditing" viewModel.bind="self">${row[property]}</td>
-    <td if.bind="isEditing">
-        <form class="${editFormClass}" role="form">
-            <div class="${editFieldClass}">
-                <input class="${editInputClass}" type="text" value.bind="row[property]" />
-            </div>
-        </form>
-    </td>
+    <compose if.bind="type === 'button'" view="./grid-column-button.html" containerless></compose>
+    <compose if.bind="type === 'checkbox'" view="./grid-column-checkbox.html" containerless></compose>
+    <compose if.bind="type === 'edit-buttons'" view="./grid-column-edit.html" containerless></compose>
+    <compose if.bind="type === 'text'" view="./grid-column-text.html" containerless></compose>
 </template>

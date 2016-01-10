@@ -12,7 +12,10 @@ define(['exports', 'module', 'lodash'], function (exports, module, _lodash) {
         this.registerWithGrid(this.grid);
       } else {
         this.bindToRow(bindingContext);
-        this.loadCssFrameworkSettings();
+
+        if (this.grid.cssFrameworkConfiguration) {
+          this.loadCssFrameworkSettings(this.grid.cssFrameworkConfiguration);
+        }
       }
     },
 
