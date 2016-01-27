@@ -1,6 +1,6 @@
 <template>
   <div class.bind="filterInputGroupClass"
-       if.bind="column.filterable !== undefined && column.inputType !== 'checkbox'">
+       if.bind="column.filterable !== null && column.inputType !== 'checkbox'">
     <input type.bind="column.inputType"
            class.bind="filterInputClass"
            placeholder="Filter"
@@ -18,4 +18,4 @@
       <i class="remove icon"></i>
     </button>
   </div>
-</temlate>
+</template>

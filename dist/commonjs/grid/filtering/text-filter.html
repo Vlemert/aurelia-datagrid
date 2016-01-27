@@ -1,6 +1,6 @@
 <template>
 	<div class.bind="$parent.filterFormFieldClass" 
-       if.bind="column.filterable !== undefined && column.inputType !== 'checkbox'">
+       if.bind="column.filterable !== null && column.inputType !== 'checkbox'">
     <div class.bind="$parent.filterFormField">
       <div class.bind="$parent.filterInputGroupClass">
         <input type.bind="column.inputType"
@@ -14,4 +14,4 @@
       </div>
     </div>
   </div>
-</temlate>
+</template>

@@ -1,5 +1,5 @@
 <template>
-  <div class.bind="filterFormClass" if.bind="column.filterable !== undefined && column.inputType === 'checkbox'">
+  <div class.bind="filterFormClass" if.bind="column.filterable !== null && column.inputType === 'checkbox'">
     <div class.bind="filterCheckboxFormFieldGroupClass">
       <div class.bind="filterCheckboxGroupClass">
         <button type="button"
